@@ -13,11 +13,19 @@ function multiply(numberOne, numberTwo){
 }
 
 function sumAndMultiply(numberOne, numberTwo, numberThree){
-  var sumOfOneAndTwo = sum(numberOne, numberTwo);
-  var totalSum = sum(sumOfOneAndTwo, numberThree);
-  var productOfOneAndTwo = multiply(numberOne, numberTwo);
-  var totalProduct = multiply(productOfOneAndTwo, numberThree);
+  var totalSum = sum(sum(numberOne, numberTwo), numberThree);
+  var totalProduct = multiply(multiply(numberOne, numberTwo), numberThree);
   console.log('\"' + numberOne + ' and ' + numberTwo + ' and ' + numberThree + ' sum  to ' + totalSum + '.\"');
   console.log('\"The numbers ' + numberOne + ' and ' + numberTwo + ' and ' + numberThree + ' have a product of ' + totalProduct + '.\"');
   return [totalSum, totalProduct];
+}
+
+function sumArray(numbersArray){
+  var sum = 0;
+  for(var number; number < numbersArray.length; number++){
+    sum += numbersArray[number];
+  }
+  console.table(numbersArray);
+  console.log('\"' + numbersArray + ' was passed in as an array of numbers, and ' + sum + ' is their sum.\"');
+  return sum;
 }
