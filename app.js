@@ -22,10 +22,20 @@ function sumAndMultiply(numberOne, numberTwo, numberThree){
 
 function sumArray(numbersArray){
   var sum = 0;
-  for(var number; number < numbersArray.length; number++){
+  for(var number = 0; number < numbersArray.length; number++){
     sum += numbersArray[number];
   }
   console.table(numbersArray);
   console.log('\"' + numbersArray + ' was passed in as an array of numbers, and ' + sum + ' is their sum.\"');
   return sum;
+}
+
+function multiplyArray(numbersArray){
+  var product = 1;
+  for(var number = 0; number < numbersArray.length; number++){
+    product *= numbersArray[number];
+  }
+  console.table(numbersArray);
+  console.log('\"The numbers ' + numbersArray + ' have a product of ' + product + '.\"');
+  return product;
 }
