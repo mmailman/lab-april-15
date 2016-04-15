@@ -11,6 +11,7 @@ function sum(numberOne, numberTwo){
 function multiply(numberOne, numberTwo){
   var product = numberOne * numberTwo;
   var multiplyLogStatement = document.getElementById('multiply');
+
   multiplyLogStatement.textContent = ('\"The product of ' + numberOne + ' and ' + numberTwo + ' is ' + product + '.\"');
   return product;
 }
