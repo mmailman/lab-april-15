@@ -2,20 +2,20 @@
 
 function sum(numberOne, numberTwo){
   var sum = numberOne + numberTwo;
-  //console.log('\"The sum of ' + numberOne + ' and ' + numberTwo + ' is ' + sum + '.\"');
+  sumLogStatement.textContent = ('\"The sum of ' + numberOne + ' and ' + numberTwo + ' is ' + sum + '.\"');
   return sum;
 }
 
 function multiply(numberOne, numberTwo){
   var product = numberOne * numberTwo;
-  //console.log('\"The product of ' + numberOne + ' and ' + numberTwo + ' is ' + product + '.\"');
+  multiplyLogStatement.textContent = ('\"The product of ' + numberOne + ' and ' + numberTwo + ' is ' + product + '.\"');
   return product;
 }
 
 function sumAndMultiply(numberOne, numberTwo, numberThree){
   var totalSum = sum(sum(numberOne, numberTwo), numberThree);
   var totalProduct = multiply(multiply(numberOne, numberTwo), numberThree);
-  console.log('\"' + numberOne + ' and ' + numberTwo + ' and ' + numberThree + ' sum  to ' + totalSum + '.\"');
+  sumAndMultiplyLogStatement.textContent = ('\"' + numberOne + ' and ' + numberTwo + ' and ' + numberThree + ' sum  to ' + totalSum + '.\"');
   console.log('\"The numbers ' + numberOne + ' and ' + numberTwo + ' and ' + numberThree + ' have a product of ' + totalProduct + '.\"');
   return [totalSum, totalProduct];
 }
@@ -26,7 +26,7 @@ function sumArray(numbersArray){
     sum += numbersArray[number];
   }
   console.table(numbersArray);
-  console.log('\"' + numbersArray + ' was passed in as an array of numbers, and ' + sum + ' is their sum.\"');
+  sumArrayLogStatement.textContent = ('\"' + numbersArray + ' was passed in as an array of numbers, and ' + sum + ' is their sum.\"');
   return sum;
 }
 
@@ -36,6 +36,12 @@ function multiplyArray(numbersArray){
     product *= numbersArray[number];
   }
   console.table(numbersArray);
-  console.log('\"The numbers ' + numbersArray + ' have a product of ' + product + '.\"');
+  multiplyArrayLogStatement.textContent = ('\"The numbers ' + numbersArray + ' have a product of ' + product + '.\"');
   return product;
 }
+
+var sumLogStatement = document.getElementById('sum');
+var multiplyLogStatement = document.getElementById('multiply');
+var sumAndMultiplyLogStatement = document.getElementById('sumAndMultiply');
+var sumArrayLogStatement = document.getElementById('sumArray');
+var multiplyArrayLogStatement = document.getElementById('multiplyArray');
